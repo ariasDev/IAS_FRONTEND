@@ -1,0 +1,11 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(86, 86, 230);
+}
+
+.title{
+    color: white;
+    font-family: 'Lobster', cursive;
+}

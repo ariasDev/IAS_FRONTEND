@@ -1,0 +1,62 @@
+<div class="container-registry-component">
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="form">
+        <div class="form-row">
+          <p for="id_servicio" class="label">
+            Id del servicio *
+          </p>
+          <input id="id_servicio" type="text" formControlName="id_servicio" class="input"
+            placeholder="Ingresa el id del servicio">
+    
+          <div class="alert-danger" *ngIf="id_servicio.invalid && id_servicio.dirty ">
+            <div class="container-error-message" *ngIf="id_servicio.errors.required">
+              El id del servicio es requerido
+            </div>
+            <div class="container-error-message" *ngIf="id_servicio.errors.minlength">
+              El id del servicio debe ser de minimo 5 caracteres
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+            <p for="id_tecnico" class="label">
+              Id del tecnico *
+            </p>
+            <input id="id_tecnico" type="text" formControlName="id_tecnico" class="input"
+              placeholder="Ingresa el id del tecnico">
+      
+            <div class="alert-danger" *ngIf="id_tecnico.invalid && id_tecnico.dirty ">
+              <div class="container-error-message" *ngIf="id_tecnico.errors.required">
+                El id del tecnico es requerido
+              </div>
+              <div class="container-error-message" *ngIf="id_tecnico.errors.minlength">
+                El id del tecnico debe ser de minimo 5 caracteres
+              </div>
+            </div>
+          </div>
+    
+        <div class="form-row">
+          <p for="fecha_inicio" class="label">
+            Fecha de inicio servicio*
+          </p>
+          <input id="fecha_inicio" type="datetime-local" formControlName="fecha_inicio" class="input">
+          <div class="alert-danger" *ngIf="fecha_inicio.invalid && fecha_inicio.dirty ">
+            <div class="container-error-message" *ngIf="fecha_inicio.errors.required">
+              La fecha de inicio es requerida
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+            <p for="fecha_fin" class="label">
+              Fecha de fin servicio*
+            </p>
+            <input id="fecha_fin" type="datetime-local" formControlName="fecha_fin" class="input">
+            <div class="alert-danger" *ngIf="fecha_fin.invalid && fecha_fin.dirty ">
+              <div class="container-error-message" *ngIf="fecha_fin.errors.required">
+                La fecha de fin es requerida
+              </div>
+            </div>
+          </div>
+        <button class="button" type="submit">Guardar registro</button>
+      </form>
+</div>
