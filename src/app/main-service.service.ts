@@ -8,8 +8,8 @@ export class MainServiceService {
   private URL_TIMETRACKER = 'http://localhost:8085/timetracker'
   constructor(private http: HttpClient) { }
 
-  public getAllClients() {
-    return this.http.get(`${this.URL_TIMETRACKER}`);
+  public consultService(id_tecnico, semana) {
+    return this.http.get(`${this.URL_TIMETRACKER}/consultService?id=${id_tecnico}&week=${semana}`);
   }
 
   public saveNewService(custemerData) {

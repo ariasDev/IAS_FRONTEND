@@ -1,0 +1,63 @@
+<div class="container-consult-component">
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="form">
+        <h1 class="title">Colsulta de horas laboradas</h1>
+
+        <div class="form-row">
+            <p for="id_tecnico" class="label">
+                Id del tecnico *
+            </p>
+            <input id="id_tecnico" type="text" formControlName="id_tecnico" class="input" placeholder="Ingresa el id del tecnico">
+
+            <div class="alert-danger" *ngIf="id_tecnico.invalid && id_tecnico.dirty ">
+                <div class="container-error-message" *ngIf="id_tecnico.errors.required">
+                    El id del tecnico es requerido
+                </div>
+                <div class="container-error-message" *ngIf="id_tecnico.errors.minlength">
+                    El id del tecnico debe ser de minimo 5 caracteres
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <p for="id_servicio" class="label">
+                Semana *
+            </p>
+            <input id="week" type="number" formControlName="week" class="input" placeholder="Ingresa el id del servicio">
+
+            <div class="alert-danger" *ngIf="week.invalid && week.dirty ">
+                <div class="container-error-message" *ngIf="week.errors.required">
+                    El campo semana es requerido
+                </div>
+                <div class="container-error-message" *ngIf="week.errors.minlength">
+                    El campo semana debe tener minimo un digito
+                </div>
+            </div>
+        </div>
+
+        <button class="button" type="submit">Consultar</button>
+    </form>
+
+    <table class="egt" *ngIf="flagTable">
+        <h2 class="title">Resultado</h2>
+        <tr>
+            <th>Tipo</th>
+            <th>Cantidad Horas</th>
+        </tr>
+        <tr>
+            <td>Horas Normales</td>
+            <td>{{responseMainServive.response.horasNormales}}</td>
+        </tr>
+        <tr>
+            <td>Horas Dominicales</td>
+            <td>{{responseMainServive.response.horasDominicales}}</td>
+        </tr>
+        <tr>
+            <td>Horas Normales Extra</td>
+            <td>{{responseMainServive.response.horasNormalesExtra}}</td>
+        </tr>
+        <tr>
+            <td>Horas Dominicales Extra</td>
+            <td>{{responseMainServive.response.horasDominicalesExtra}}</td>
+        </tr>
+    </table>
+</div>

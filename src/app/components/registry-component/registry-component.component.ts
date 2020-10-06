@@ -34,7 +34,6 @@ export class RegistryComponentComponent implements OnInit, OnDestroy {
      } else {
         alert('Algunos Datos que diligenciaste no son validos')
      }
-     
    }
 
   get id_servicio() { return this.checkoutForm.get('id_servicio') }

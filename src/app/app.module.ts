@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { RegistryComponentComponent } from './components/registry-component/registry-component.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { ConsultComponentComponent } from './components/consult-component/consult-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistryComponentComponent
+    RegistryComponentComponent,
+    ConsultComponentComponent
   ],
   imports: [
     BrowserModule,
